@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void borrarTarea(final Tarea tarea){
         AlertDialog.Builder dialogo = new AlertDialog.Builder(MainActivity.this);
-        dialogo.setTitle(R.string.Aviso);
+        dialogo.setTitle(getString(R.string.Aviso));
 
-        dialogo.setMessage(R.string.AvisoMsn);
+        dialogo.setMessage(getString(R.string.AvisoMsn) + tarea.getId() + getString(R.string.AvisoMsn2));
 
         dialogo.setPositiveButton(android.R.string.yes, (dialogInterface, i) -> tareaViewModel.delTarea(tarea));
         dialogo.setNegativeButton(android.R.string.no, (dialogInterface, i) -> {

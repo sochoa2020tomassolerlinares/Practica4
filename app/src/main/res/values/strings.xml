@@ -23,9 +23,10 @@
     <string name="Desc">Descripción</string>
     <string name="NuevaTarea">Nueva Tarea</string>
     <string name="Aviso">Aviso</string>
-    <string name="AvisoMsn">"¿Está seguro que desea eliminar esta tarea?"</string>
+    <string name="AvisoMsn">A continuación se eliminará la tarea </string>
+    <string name="AvisoMsn2">\n¿Está seguro de que desea eliminarla?</string>
     <string name="CancelBorrar">La tarea no se ha eliminado</string>
-    <string name="tarea">"Tarea "</string>
+    <string name="tarea">Tarea </string>
     <string name="MsnError">No se ha creado la tarea</string>
     <string-array name="prioridad">
         <item>Baja</item>
