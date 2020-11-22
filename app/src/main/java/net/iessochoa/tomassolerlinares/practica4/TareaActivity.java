@@ -13,10 +13,16 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import adapters.TareasAdapter;
 import model.Tarea;
 
+/**
+ * Clase encargada de generar la ventana de creación y edición de tareas
+ */
 public class TareaActivity extends AppCompatActivity {
+    /**
+     * Método encargado de generar los campos cuando se abre la clase.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +68,7 @@ public class TareaActivity extends AppCompatActivity {
             edtBreveDesc.setText(editTarea.getResumen());
             edtDesc.setText(editTarea.getDescripcion());
         } else {
-            this.setTitle(R.string.NuevaTarea);
+            this.setTitle(getString(R.string.NuevaTarea));
         }
         spnEstado.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -107,11 +113,11 @@ public class TareaActivity extends AppCompatActivity {
                     tarea = new Tarea(prioridad, categoria, estado, tecnico, desc, breveDesc);
                 }
                 Intent intent = getIntent();
-                intent.putExtra("TAREA", tarea);
+                intent.putExtra(getString(R.string.intentTarea), tarea);
                 setResult(RESULT_OK, intent);
                 finish();
             } else {
-                Toast.makeText(this, "El nombre Técnico y la descripción son obligatorios", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.SaveTareaError), Toast.LENGTH_SHORT).show();
             }
         });
     }

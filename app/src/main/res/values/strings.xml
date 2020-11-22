@@ -28,6 +28,8 @@
     <string name="CancelBorrar">La tarea no se ha eliminado</string>
     <string name="tarea">Tarea </string>
     <string name="MsnError">No se ha creado la tarea</string>
+    <string name="SaveTareaError">El nombre Técnico y la descripción son obligatorios</string>
+    <string name="intentTarea">TAREA</string>
     <string-array name="prioridad">
         <item>Baja</item>
         <item>Media</item>

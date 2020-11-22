@@ -17,23 +17,35 @@ import java.util.List;
 
 import model.Tarea;
 
+/**
+ * Clase adaptador del RecyclerView
+ */
 public class TareasAdapter extends RecyclerView.Adapter<TareasAdapter.TareaViewHolder> {
     private List<Tarea> listaTareas;
 
     private OnItemClickBorrarListener listenerBorrar;
     private OnItemClickEditarListener listenerEditar;
 
+    /**
+     * Método que genera un nuevo item cuando se requiere.
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public TareaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //fijaros que le pasamos el layout que representa cada elemento
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_tarea, parent, false);
         return new TareaViewHolder(itemView);
     }
 
-
-    @SuppressLint("ResourceAsColor")
+    /**
+     * Método encargado del indicar la posición en lista del elemento pasa el holder o view requerido.
+     * @param tareaViewHolder
+     * @param position
+     */
+    @SuppressLint({"ResourceAsColor", "SetTextI18n"})
     @Override
     public void onBindViewHolder(@NonNull TareasAdapter.TareaViewHolder tareaViewHolder, int position) {
         if (listaTareas != null) {
@@ -52,7 +64,7 @@ public class TareasAdapter extends RecyclerView.Adapter<TareasAdapter.TareaViewH
                     tareaViewHolder.ivEstado.setImageResource(R.drawable.ic_recycledview_finish);
                     break;
             }
-             if(tarea.getPrioridad().equals("Alta")){
+            if(tarea.getPrioridad().equals("Alta")){
                 tareaViewHolder.layout.setBackgroundResource(R.color.colorImportante);
             }else{
                 tareaViewHolder.layout.setBackgroundColor(Color.TRANSPARENT);
@@ -60,6 +72,10 @@ public class TareasAdapter extends RecyclerView.Adapter<TareasAdapter.TareaViewH
         }
     }
 
+    /**
+     * Método encargado de mostrar el número de elementos
+     * @return
+     */
     @Override
     public int getItemCount() {
         if (listaTareas!= null)
@@ -67,27 +83,31 @@ public class TareasAdapter extends RecyclerView.Adapter<TareasAdapter.TareaViewH
         else return 0;
     }
 
+    /**
+     * Método que asigna la lista al adaptador
+     * @param listTarea
+     */
     public void setTarea(List<Tarea> listTarea) {
         listaTareas = listTarea;
         notifyDataSetChanged();
     }
 
-
+    /**
+     * Clase extendida de RecyclerView que se encarga de representar a cada item
+     */
     public class TareaViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvResumen;
-        private TextView tvTecnico;
-        private ImageView ivEstado;
-        private ImageView ivEditar;
-        private ImageView ivBorrar;
-        private ConstraintLayout layout;
+        private final TextView tvResumen;
+        private final TextView tvTecnico;
+        private final ImageView ivEstado;
+        private final ConstraintLayout layout;
 
         private TareaViewHolder(@NonNull View itemView) {
             super(itemView);
             tvResumen = itemView.findViewById(R.id.tvResumen);
             tvTecnico = itemView.findViewById(R.id.tvTecnico);
             ivEstado = itemView.findViewById(R.id.ivEstado);
-            ivEditar = itemView.findViewById(R.id.ivEditar);
-            ivBorrar = itemView.findViewById(R.id.ivBorrar);
+            ImageView ivEditar = itemView.findViewById(R.id.ivEditar);
+            ImageView ivBorrar = itemView.findViewById(R.id.ivBorrar);
             layout = itemView.findViewById(R.id.item_tarea);
             ivBorrar.setOnClickListener(v -> {
                 if (listenerBorrar != null)
@@ -101,18 +121,30 @@ public class TareasAdapter extends RecyclerView.Adapter<TareasAdapter.TareaViewH
         }
     }
 
+    /**
+     * Interfaz para que el ImageView Borrar tenga función
+     */
     public interface OnItemClickBorrarListener {
         void onItemClickBorrar(Tarea tarea);
     }
-
+    /**
+     * Interfaz para que el ImageView Editar tenga función
+     */
     public interface OnItemClickEditarListener{
         void onItemClickEditar(Tarea tarea);
     }
 
+    /**
+     * Método que permite crear el listener de borrar
+     * @param listener
+     */
     public void setOnClickBorrarListener(OnItemClickBorrarListener listener) {
         this.listenerBorrar = listener;
     }
-
+    /**
+     * Método que permite crear el listener de editar
+     * @param listener
+     */
     public void setOnClickEditarListener(OnItemClickEditarListener listener){
         this.listenerEditar = listener;
     }

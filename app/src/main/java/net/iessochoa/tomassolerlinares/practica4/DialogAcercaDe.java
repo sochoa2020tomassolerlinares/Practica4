@@ -6,8 +6,15 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.fragment.app.DialogFragment;
 
+/**
+ * Clase encargada de mostrar el diálogo Acerca De
+ */
 public class DialogAcercaDe extends DialogFragment {
-
+    /**
+     * Método encargado de mostrar el diálogo Acerca De
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 

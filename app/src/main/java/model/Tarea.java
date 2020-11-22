@@ -3,6 +3,9 @@ package model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * Clase Parcelable encargada de crear objetos tarea
+ */
 public class Tarea implements Parcelable {
     static int contador=1;
     private int id;
@@ -13,6 +16,16 @@ public class Tarea implements Parcelable {
     private String descripcion;
     private String resumen;
 
+    /**
+     * Constructor del objeto con id
+     * @param id
+     * @param prioridad
+     * @param categoria
+     * @param estado
+     * @param tecnico
+     * @param descripcion
+     * @param resumen
+     */
     public Tarea(int id, String prioridad, String categoria, String estado, String tecnico, String descripcion, String resumen) {
         this.id = id;
         this.prioridad = prioridad;
@@ -23,6 +36,15 @@ public class Tarea implements Parcelable {
         this.resumen = resumen;
     }
 
+    /**
+     * Constructor del objeto sin id
+     * @param prioridad
+     * @param categoria
+     * @param estado
+     * @param tecnico
+     * @param descripcion
+     * @param resumen
+     */
     public Tarea(String prioridad, String categoria, String estado, String tecnico, String descripcion, String resumen) {
         this.id=contador++;
         this.prioridad = prioridad;
@@ -97,6 +119,11 @@ public class Tarea implements Parcelable {
         this.resumen = resumen;
     }
 
+    /**
+     * Método encargado de localizar el objeto en un arraylist
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
