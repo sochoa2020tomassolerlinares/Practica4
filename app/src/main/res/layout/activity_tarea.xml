@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TareaActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSaveTarea"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:backgroundTint="#FFFFFF"
+        android:clickable="true"
+        android:contentDescription="@string/AddButton"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        app:srcCompat="@drawable/ic_main_save"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/tvCategoria"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:text="@string/categoria"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPrioridad"
+        app:layout_constraintEnd_toStartOf="@+id/spnCategoria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPrioridad"
+        android:layout_width="120dp"
+        android:layout_height="32dp"
+        android:text="@string/priopridad"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvEstado"
+        app:layout_constraintEnd_toStartOf="@+id/spnPrioridad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCategoria" />
+
+    <TextView
+        android:id="@+id/tvEstado"
+        android:layout_width="80dp"
+        android:layout_height="31dp"
+        android:text="@string/estado"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTecnicoAsig"
+        app:layout_constraintEnd_toStartOf="@+id/spnEstado"
+        app:layout_constraintStart_toEndOf="@+id/ivEstadoTarea"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrioridad" />
+
+    <ImageView
+        android:id="@+id/ivEstadoTarea"
+        android:layout_width="54dp"
+        android:layout_height="51dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTecnicoAsig"
+        app:layout_constraintEnd_toStartOf="@+id/tvEstado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrioridad"
+        app:srcCompat="@android:drawable/ic_menu_agenda" />
+
+    <EditText
+        android:id="@+id/edtTecnicoAsig"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/Nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/tvBreveDesc2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTecnicoAsig" />
+
+    <TextView
+        android:id="@+id/tvTecnicoAsig"
+        android:layout_width="173dp"
+        android:layout_height="32dp"
+        android:text="@string/tecnicoAsig"
+        android:textColor="@color/colorTarea"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtTecnicoAsig"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivEstadoTarea" />
+
+    <TextView
+        android:id="@+id/tvBreveDesc2"
+        android:layout_width="173dp"
+        android:layout_height="32dp"
+        android:text="@string/breveDesc"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtBreveDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtTecnicoAsig" />
+
+    <EditText
+        android:id="@+id/edtBreveDesc"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/breveDesc"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/tvDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBreveDesc2" />
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="173dp"
+        android:layout_height="32dp"
+        android:text="@string/Desc"
+        android:textColor="@color/colorTarea"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtBreveDesc" />
+
+    <EditText
+        android:id="@+id/edtDesc"
+        android:layout_width="352dp"
+        android:layout_height="274dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesc" />
+
+    <Spinner
+        android:id="@+id/spnCategoria"
+        android:layout_width="228dp"
+        android:layout_height="35dp"
+        android:entries="@array/categoria"
+        app:layout_constraintBottom_toTopOf="@+id/spnPrioridad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvCategoria"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spnEstado"
+        android:layout_width="228dp"
+        android:layout_height="35dp"
+        android:entries="@array/estado"
+        app:layout_constraintBottom_toTopOf="@+id/tvTecnicoAsig"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvEstado"
+        app:layout_constraintTop_toBottomOf="@+id/spnPrioridad" />
+
+    <Spinner
+        android:id="@+id/spnPrioridad"
+        android:layout_width="228dp"
+        android:layout_height="35dp"
+        android:entries="@array/prioridad"
+        app:layout_constraintBottom_toTopOf="@+id/spnEstado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvPrioridad"
+        app:layout_constraintTop_toBottomOf="@+id/spnCategoria" />
+</androidx.constraintlayout.widget.ConstraintLayout>

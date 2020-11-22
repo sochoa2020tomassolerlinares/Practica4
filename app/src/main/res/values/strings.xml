@@ -1,3 +1,48 @@
 <resources>
     <string name="app_name">Practica4</string>
+    <string name="order">ordenar</string>
+    <string name="delete">Delete</string>
+    <string name="moreInfo">Más información...</string>
+    <string name="AcercaDeTitulo">Acerca de...</string>
+    <string name="AcercaDeTexto">Práctica 4\n
+        V 1.0\n
+        Tomás Soler Linares\n
+        Licencia CC\n
+        (Creative Commons)</string>
+    <string name="Ok">OK</string>
+    <string name="msgOrdenar">Ordenando listas...</string>
+    <string name="resumen">Resumen</string>
+    <string name="tecnico">Técnico</string>
+    <string name="AddButton">Botón para añadir tareas</string>
+    <string name="categoria">Categoría</string>
+    <string name="priopridad">Prioridad</string>
+    <string name="estado">Estado</string>
+    <string name="tecnicoAsig">Técnico asignado</string>
+    <string name="Nombre">Nombre</string>
+    <string name="breveDesc">Breve descripción</string>
+    <string name="Desc">Descripción</string>
+    <string name="NuevaTarea">Nueva Tarea</string>
+    <string name="Aviso">Aviso</string>
+    <string name="AvisoMsn">"¿Está seguro que desea eliminar esta tarea?"</string>
+    <string name="CancelBorrar">La tarea no se ha eliminado</string>
+    <string name="tarea">"Tarea "</string>
+    <string name="MsnError">No se ha creado la tarea</string>
+    <string-array name="prioridad">
+        <item>Baja</item>
+        <item>Media</item>
+        <item>Alta</item>
+    </string-array>
+    <string-array name="categoria">
+        <item>Reparación</item>
+        <item>Instalación</item>
+        <item>Mantenimiento</item>
+        <item>Comercial</item>
+        <item>otros</item>
+        7
+    </string-array>
+    <string-array name="estado">
+        <item>Abierta</item>
+        <item>En curso</item>
+        <item>Terminada</item>
+    </string-array>
 </resources>
